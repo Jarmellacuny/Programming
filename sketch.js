@@ -1,13 +1,31 @@
 //The setup function only happens once
+var newnew=5 
+
 function setup() {
-	createCanvas(500, 500); //create a 500px X 500px canvas
+  createCanvas(600, 600);
+  // Change Colors
+  r = random(255);
+  g = random(255);
+  b = random(255);
 }
 
-//The draw function happens over and over again
 function draw() {
-  background(173,216,230); //an RGB color for the canvas' background
-  //circle
-  stroke(255,255,127) // an RGB color for the circle's border
-  fill(255,255,127,150); // an RGB color for the inside of the circle (the last number refers to transparency (min. 0, max. 255))
-  ellipse(width/2,height/2,20,20); // center of canvas, 20px dia
+  background(127);
+  // Draw a circle
+  strokeWeight(1);
+  stroke(b, b, b);
+  fill(b, b, b, 127);
+  ellipse(mouseX,mouseY,100, 100, 100, 100);
+}
+
+// When the user clicks the mouse
+function mousePressed() {
+  // Check if mouse is inside the circle
+  let d = dist(mouseX, mouseY, 360, 200);
+  if (d < 100) {
+    // Pick new random color values
+    r = random(255);
+    g = random(255);
+    b = random(255);
+  }
 }
