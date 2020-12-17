@@ -1,6 +1,4 @@
 //The setup function only happens once
-var newnew=mouseX
-var newnew2=mouseY
 
 function setup() {
   createCanvas(600, 600);
@@ -16,13 +14,13 @@ function draw() {
   strokeWeight(1);
   stroke(b, b, b);
   fill(b, b, b, 127);
-  ellipse(newnew,newnew2,100, 100, 100, 100);
+  ellipse(mouseX,mouseY,100, 100, 100, 100);
 }
 
 // When the user clicks the mouse
 function mousePressed() {
   // Check if mouse is inside the circle
-  let d = dist(newnew, newnew2, 360, 200);
+  let d = dist(mouseX, mouseY, 360, 200);
   if (d < 100) {
     // Pick new random color values
     r = random(255);
@@ -30,3 +28,4 @@ function mousePressed() {
     b = random(255);
   }
 }
+
